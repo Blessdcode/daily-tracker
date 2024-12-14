@@ -2,7 +2,7 @@ import { useGetTransaction } from "../../hook/useGetTransaction";
 
 const Balance = () => {
   const { transactionTotals } = useGetTransaction();
-  const { balance } = transactionTotals;
+  const { balance, Income, expense } = transactionTotals;
 
   // Render loading state while balance is undefined
   if (balance === undefined) {
@@ -11,8 +11,7 @@ const Balance = () => {
 
   return (
     <div>
-      <h3>Balance: {balance.toFixed(2)}</h3>{" "}
-      {/* Format balance to 2 decimal places */}
+      <h3>Balance: {Income}</h3> {/* Format balance to 2 decimal places */}
     </div>
   );
 };

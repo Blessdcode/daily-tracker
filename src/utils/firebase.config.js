@@ -15,12 +15,14 @@ import {
 import { doc, getDoc, setDoc, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBiFV04ewSnwYivETEQztVbMGiYWbPR0fY",
-  authDomain: "dailytracker-e03cf.firebaseapp.com",
-  projectId: "dailytracker-e03cf",
-  storageBucket: "dailytracker-e03cf.appspot.com",
-  messagingSenderId: "496322451038",
-  appId: "1:496322451038:web:d20941e63c6b2d13d786cf",
+  apiKey: "AIzaSyDRkH71hkI9I8oCAd_iW-9k3It3pD7kiDU",
+  authDomain: "expense-4199a.firebaseapp.com",
+  databaseURL: "https://expense-4199a-default-rtdb.firebaseio.com",
+  projectId: "expense-4199a",
+  storageBucket: "expense-4199a.firebasestorage.app",
+  messagingSenderId: "667702831079",
+  appId: "1:667702831079:web:6d798f2acfdff8b450bf42",
+  measurementId: "G-X3H1SW481W",
 };
 
 // Initialize Firebase

@@ -1,17 +1,10 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db, auth } from "../utils/firebase.config";
-import { useGetUserInfo } from "./useGetUserInfo"; 
+import { useGetUserInfo } from "./useGetUserInfo";
 
 export const useAddTransaction = () => {
-  const transactionCollectionRef = collection(db, "transactions");
-
-  // Fetch userID using auth.currentUser or from useGetUserInfo
-  const user = auth.currentUser;
-  if (!user) {
-    throw new Error("No authenticated user found");
-  }
-
-  const userID = user.uid; 
+  const transactionCollectionRef = collection(db, "transaction");
+  const { userID } = useGetUserInfo();
 
   // Add Transaction Function
   const addTransaction = async ({
@@ -27,7 +20,7 @@ export const useAddTransaction = () => {
         description,
         transactionAmount,
         transactionType,
-        createdAt: serverTimestamp(), 
+        createdAt: serverTimestamp(),
       });
       console.log("Transaction added successfully!");
     } catch (error) {

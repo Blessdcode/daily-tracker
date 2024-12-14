@@ -13,7 +13,7 @@ import { useGetUserInfo } from "./useGetUserInfo";
 
 export const useGetTransaction = () => {
   const { userID } = useGetUserInfo();
-  const transactionCollectionRef = collection(db, "transactions");
+  const transactionCollectionRef = collection(db, "transaction");
   const [transactions, setTransactions] = useState([]);
   const [transactionTotals, setTransactionTotals] = useState({
     balance: 0.0,
@@ -62,7 +62,7 @@ export const useGetTransaction = () => {
 
   const deleteTransaction = async (transactionId) => {
     try {
-      const transactionDocRef = doc(db, "transactions", transactionId);
+      const transactionDocRef = doc(db, "transaction", transactionId);
       await deleteDoc(transactionDocRef);
     } catch (err) {
       console.error("Error deleting transaction:", err);
